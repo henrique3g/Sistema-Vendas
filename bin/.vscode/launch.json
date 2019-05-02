@@ -1,0 +1,31 @@
+{
+	"configurations": [
+		{
+			"type": "java",
+			"name": "CodeLens (Launch) - MainApp",
+			"request": "launch",
+			"mainClass": "br.com.jhdev.MainApp",
+			"projectName": "Sistema-Vendas"
+		},
+		{
+			"name": "C Debug",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/${fileBasenameNoExtension}.exe",
+			"args": [],
+			"stopAtEntry": false,
+			"cwd": "${workspaceFolder}",
+			"environment": [],
+			"externalConsole": true,
+			"MIMode": "gdb",
+			"miDebuggerPath": "C:\\MinGW\\bin\\gdb.exe",
+			"setupCommands": [
+				{
+					"description": "Enable pretty-printing for gdb",
+					"text": "-enable-pretty-printing",
+					"ignoreFailures": true
+				}
+			]
+		}
+	]
+}
