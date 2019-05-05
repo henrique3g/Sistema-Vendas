@@ -4,6 +4,13 @@
 			"type": "java",
 			"name": "CodeLens (Launch) - MainApp",
 			"request": "launch",
+			"mainClass": "MainApp",
+			"projectName": "Sistema-Vendas"
+		},
+		{
+			"type": "java",
+			"name": "CodeLens (Launch) - MainApp",
+			"request": "launch",
 			"mainClass": "br.com.jhdev.MainApp",
 			"projectName": "Sistema-Vendas"
 		},

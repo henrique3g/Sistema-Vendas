@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="484.0" prefWidth="481.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.jhdev.controllers.DadosClientesController">
+   <children>
+      <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="200.0">
+        <items>
+            <Button mnemonicParsing="false" text="Cancelar">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding></Button>
+        </items>
+      </ToolBar>
+      <VBox minHeight="-Infinity" prefHeight="426.0" prefWidth="481.0" spacing="5.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Label text="Código:" />
+            <TextField fx:id="txtId" maxWidth="70.0">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding></TextField>
+            <Label text="Nome:" />
+            <TextField fx:id="txtNome">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding></TextField>
+            <Label text="Apelido:" />
+            <TextField fx:id="txtApelido" maxWidth="330.0">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding></TextField>
+            <HBox prefWidth="200.0">
+               <children>
+                  <VBox prefWidth="100.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="CPF:" />
+                        <TextField fx:id="txtCpf">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets right="30.0" />
+                           </VBox.margin></TextField>
+                     </children>
+                  </VBox>
+                  <VBox prefWidth="100.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="RG:" />
+                        <TextField fx:id="txtRg" prefWidth="90.0">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets right="30.0" />
+                           </VBox.margin></TextField>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Label text="Endereço:" />
+            <TextField fx:id="txtEndereco">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding></TextField>
+            <HBox prefWidth="200.0">
+               <children>
+                  <VBox prefWidth="100.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Telefone:" />
+                        <TextField fx:id="txtTelefone1">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets right="30.0" />
+                           </VBox.margin></TextField>
+                     </children>
+                  </VBox>
+                  <VBox prefWidth="100.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Telefone(Opcional):" />
+                        <TextField fx:id="txtTelefone2" prefWidth="161.0">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets right="30.0" />
+                           </VBox.margin></TextField>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Label text="Região:" />
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ComboBox fx:id="cbRegiao" prefWidth="295.0" promptText="Regiões">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding></ComboBox>
+                  <Pane HBox.hgrow="ALWAYS" />
+                  <Button mnemonicParsing="false" prefWidth="90.0" text="Salvar">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </children>
+</VBox>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="821.0" spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.jhdev.controllers.ListClientesController">
+   <children>
+      <ToolBar prefHeight="40.0" prefWidth="200.0">
+        <items>
+          <Button fx:id="btnNew" mnemonicParsing="false" text="Novo" />
+            <Button fx:id="btnEdit" mnemonicParsing="false" text="Editar" />
+            <Button fx:id="btnDelete" mnemonicParsing="false" text="Excluir" />
+            <Button fx:id="btnCancel" mnemonicParsing="false" text="Cancelar" />
+        </items>
+      </ToolBar>
+      <HBox alignment="CENTER_LEFT" prefWidth="200.0" spacing="10.0">
+         <children>
+            <TextField fx:id="txtBusca" prefHeight="25.0" prefWidth="480.0" promptText="Buscar" HBox.hgrow="ALWAYS" />
+            <RadioButton mnemonicParsing="false" selected="true" text="Nome">
+               <toggleGroup>
+                  <ToggleGroup fx:id="tipoBusca" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton mnemonicParsing="false" text="Apelido" toggleGroup="$tipoBusca" />
+         </children>
+         <VBox.margin>
+            <Insets left="10.0" right="10.0" />
+         </VBox.margin>
+      </HBox>
+      <TableView fx:id="tblClientes" prefHeight="200.0" prefWidth="744.0" VBox.vgrow="ALWAYS">
+        <columns>
+          <TableColumn fx:id="colId" prefWidth="65.0" text="Código" />
+          <TableColumn fx:id="colNome" prefWidth="250.0" text="Nome" />
+            <TableColumn fx:id="colApelido" prefWidth="200.0" text="Apelido" />
+            <TableColumn fx:id="colEndereco" prefWidth="150.0" text="Endereço" />
+            <TableColumn fx:id="colCpf" prefWidth="125.0" text="CPF" />
+            <TableColumn fx:id="colRg" text="RG" />
+            <TableColumn fx:id="colTelefone1" prefWidth="140.0" text="Telefone" />
+            <TableColumn fx:id="colTelefone2" prefWidth="140.0" text="Telefone" />
+            <TableColumn fx:id="colRegiao" prefWidth="150.0" text="Região" />
+        </columns>
+      </TableView>
+   </children>
+</VBox>

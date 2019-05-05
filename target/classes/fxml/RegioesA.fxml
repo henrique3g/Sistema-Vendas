@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="268.0" prefWidth="634.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.jhdev.controllers.RegioesController">
+   <children>
+      <VBox fx:id="boxInputs" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="268.0" prefWidth="277.0" spacing="10.0">
+         <children>
+            <Label text="Codigo:">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Label>
+            <HBox prefWidth="200.0">
+               <children>
+                  <TextField fx:id="txtId" maxWidth="50.0" prefWidth="100.0" promptText="Id" />
+                  <Button fx:id="btnNew" mnemonicParsing="false" text="Novo">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <Label text="Nome da Regiao:">
+               <VBox.margin>
+                  <Insets right="10.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="txtNome" maxWidth="150.0" prefWidth="100.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </TextField>
+            <Label text="Povoados:">
+               <VBox.margin>
+                  <Insets right="10.0" />
+               </VBox.margin>
+            </Label>
+            <TextArea fx:id="txtPovoados" maxHeight="100.0" maxWidth="250.0" prefHeight="71.0" prefWidth="250.0" wrapText="true">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </TextArea>
+            <HBox prefWidth="200.0" spacing="10.0">
+               <children>
+                  <HBox>
+                     <children>
+                        <Button fx:id="btnDelete" mnemonicParsing="false" text="Excluir" />
+                        <Button fx:id="btnEdit" mnemonicParsing="false" text="Editar" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="TOP_RIGHT" fillHeight="false">
+                     <children>
+                        <Button fx:id="btnSave" mnemonicParsing="false" text="Salvar" />
+                        <Button fx:id="btnCancel" mnemonicParsing="false" text="Calcelar" />
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </HBox>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+      <VBox fx:id="boxTable" prefHeight="494.0" prefWidth="357.0" HBox.hgrow="ALWAYS">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <TextField />
+                  <Button mnemonicParsing="false" text="Button" />
+               </children>
+            </HBox>
+            <TableView fx:id="tblRegioes" prefHeight="277.0" prefWidth="357.0" VBox.vgrow="ALWAYS">
+               <columns>
+                  <TableColumn fx:id="colId" prefWidth="59.0" text="Codigo" />
+                  <TableColumn fx:id="colNome" prefWidth="137.0" text="Nome" />
+                  <TableColumn fx:id="colPovoados" prefWidth="143.0" text="Povoados" />
+               </columns>
+            </TableView>
+         </children>
+      </VBox>
+   </children>
+</HBox>

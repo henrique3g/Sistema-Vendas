@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.jhdev.controllers.PrincipalController">
+   <children>
+      <MenuBar prefHeight="29.0" prefWidth="800.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="PDV">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Venda" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Gerencial">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Recebimentos" />
+               </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Cadastros">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Produtos" />
+                  <MenuItem fx:id="menuClientes" mnemonicParsing="false" text="Clientes" />
+                  <MenuItem mnemonicParsing="false" text="Categoria" />
+                  <MenuItem fx:id="menuCadRegiao" mnemonicParsing="false" text="Região" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Relatórios">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Clientes Atrasados" />
+               </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Sobre">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Sair">
+               <items>
+                  <MenuItem fx:id="menuClose" mnemonicParsing="false" text="Sair" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <Button fx:id="btnClientes" contentDisplay="TOP" graphicTextGap="10.0" layoutX="14.0" layoutY="209.0" mnemonicParsing="false" prefHeight="139.0" prefWidth="101.0" style="-fx-background-color: #34a6d3;" text="Clientes" textFill="#ebf2f5">
+         <graphic>
+            <ImageView fitHeight="108.0" fitWidth="107.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/boss.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

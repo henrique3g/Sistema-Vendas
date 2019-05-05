@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="434.0" prefWidth="439.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="main.controllers.CategoriasController">
+   <children>
+      <BorderPane prefHeight="434.0" prefWidth="439.0" AnchorPane.bottomAnchor="0.0">
+         <bottom>
+            <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <items>
+                <Button fx:id="btnInserir" mnemonicParsing="false" text="Inserir" />
+                  <Button fx:id="btnEditar" mnemonicParsing="false" text="Editar" />
+                  <Button fx:id="btnExcluir" mnemonicParsing="false" text="Excluir" />
+                  <HBox prefHeight="39.0" prefWidth="125.0" />
+                  <Button fx:id="btnSair" mnemonicParsing="false" text="Sair" textAlignment="CENTER" />
+              </items>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </ToolBar>
+         </bottom>
+         <center>
+            <TableView fx:id="tblCat" prefHeight="299.0" prefWidth="507.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn fx:id="colId" prefWidth="100.0" text="Código" />
+                <TableColumn fx:id="colNome" prefWidth="300.0" text="Nome" />
+              </columns>
+               <BorderPane.margin>
+                  <Insets left="10.0" right="10.0" top="10.0" />
+               </BorderPane.margin>
+            </TableView>
+         </center>
+         <top>
+            <GridPane BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="10.0" prefWidth="250.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="31.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Código">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Nome:" GridPane.columnIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Button fx:id="btnSalvar" mnemonicParsing="false" text="Salvar" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <TextField fx:id="txtId" disable="true" editable="false" prefWidth="100.0" promptText="Código" GridPane.rowIndex="1" />
+                  <TextField fx:id="txtNome" promptText="Nome da Categoria" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+               </children>
+               <BorderPane.margin>
+                  <Insets left="10.0" />
+               </BorderPane.margin>
+            </GridPane>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>

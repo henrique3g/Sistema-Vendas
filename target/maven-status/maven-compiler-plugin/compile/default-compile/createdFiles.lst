@@ -1,0 +1,12 @@
+br/com/jhdev/models/beans/Movimento.class
+br/com/jhdev/models/beans/Cliente.class
+br/com/jhdev/models/dao/DaoRegiao.class
+br/com/jhdev/models/beans/Produto.class
+br/com/jhdev/models/beans/Categoria.class
+br/com/jhdev/models/beans/Caixa.class
+br/com/jhdev/models/ConnectionFactory.class
+br/com/jhdev/MainApp.class
+br/com/jhdev/models/beans/Fornecedor.class
+br/com/jhdev/models/beans/Compra.class
+br/com/jhdev/models/beans/Venda.class
+br/com/jhdev/models/beans/Regiao.class

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="318.0" prefWidth="394.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.jhdev.controllers.RegioesController">
+   <children>
+      <ToolBar prefHeight="40.0" prefWidth="200.0">
+        <items>
+          <Button fx:id="btnDelete" disable="true" mnemonicParsing="false" text="Apagar" />
+            <Button fx:id="btnEdit" disable="true" mnemonicParsing="false" text="Editar" />
+            <Button fx:id="btnNew" mnemonicParsing="false" text="Novo" />
+            <Button fx:id="btnCancel" mnemonicParsing="false" text="Cancelar" />
+        </items>
+      </ToolBar>
+      <TabPane fx:id="tabPane" prefHeight="375.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+        <tabs>
+          <Tab text="Consulta">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="239.0" prefWidth="394.0">
+                     <children>
+                        <VBox prefWidth="394.0" spacing="5.0">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefWidth="200.0" spacing="10.0">
+                                 <children>
+                                    <TextField fx:id="txtFind" prefHeight="25.0" prefWidth="209.0" promptText="Buscar" />
+                                    <RadioButton mnemonicParsing="false" selected="true" text="Nome">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="tipoPesquisa" />
+                                       </toggleGroup>
+                                    </RadioButton>
+                                    <RadioButton mnemonicParsing="false" text="Povoado" toggleGroup="$tipoPesquisa" />
+                                 </children>
+                              </HBox>
+                              <TableView fx:id="tblRegioes" prefHeight="204.0" prefWidth="384.0">
+                                <columns>
+                                  <TableColumn fx:id="colId" prefWidth="65.0" text="Código" />
+                                  <TableColumn fx:id="colNome" prefWidth="124.0" text="Nome" />
+                                    <TableColumn fx:id="colPovoados" prefWidth="177.0" text="Povoados" />
+                                </columns>
+                                 <VBox.margin>
+                                    <Insets right="5.0" />
+                                 </VBox.margin>
+                              </TableView>
+                           </children>
+                           <padding>
+                              <Insets left="5.0" top="5.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab disable="true" text="Dados">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox prefHeight="242.0" prefWidth="394.0" spacing="5.0">
+                           <children>
+                              <Label text="Código:" />
+                              <TextField fx:id="txtId" disable="true" maxWidth="65.0" prefHeight="25.0" prefWidth="65.0" promptText="Código" />
+                              <Label text="Nome da Região:" />
+                              <TextField fx:id="txtNome" promptText="Nome da Região" />
+                              <Label text="Povoados:" />
+                              <TextArea fx:id="txtPovoados" prefHeight="140.0" prefWidth="245.0" promptText="Digite a lista dos povoados dessa região" wrapText="true" />
+                              <Button fx:id="btnSave" alignment="CENTER" mnemonicParsing="false" text="Salvar">
+                                 <VBox.margin>
+                                    <Insets left="325.0" />
+                                 </VBox.margin></Button>
+                           </children>
+                           <padding>
+                              <Insets left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</VBox>
