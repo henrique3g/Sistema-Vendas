@@ -15,8 +15,7 @@ public class Cliente {
 	public Cliente() {
 	}
 
-	public Cliente(int id, String nome, String apelido, String rg, String cpf, String endereco, String telefone1, String telefone2, Regiao regiao) {
-		this.id = id;
+	public Cliente(String nome, String apelido, String rg, String cpf, String endereco, String telefone1, String telefone2) {
 		this.nome = nome;
 		this.apelido = apelido;
 		this.rg = rg;
@@ -24,18 +23,21 @@ public class Cliente {
 		this.endereco = endereco;
 		this.telefone1 = telefone1;
 		this.telefone2 = telefone2;
-		this.regiao = regiao;
+	}
+	public Cliente(String nome, String apelido, String rg, String cpf, String endereco, String telefone1, String telefone2, int idRegiao) {
+		this(nome, apelido, rg, cpf, endereco, telefone1, telefone2);
+		this.regiao = new Regiao(idRegiao);
 	}
 
-	public Cliente(int id, String nome, String apelido, String rg, String cpf, String endereco, String telefone1, String telefone2, String nomeRegiao) {
+	public Cliente(int id, String nome, String apelido, String rg, String cpf, String endereco, String telefone1, String telefone2, Regiao regiao) {
+		this(nome, apelido, rg, cpf, endereco, telefone1, telefone2);
 		this.id = id;
-		this.nome = nome;
-		this.apelido = apelido;
-		this.rg = rg;
-		this.cpf = cpf;
-		this.endereco = endereco;
-		this.telefone1 = telefone1;
-		this.telefone2 = telefone2;
+		this.regiao = regiao;
+	}
+	
+	public Cliente(int id, String nome, String apelido, String rg, String cpf, String endereco, String telefone1, String telefone2, String nomeRegiao) {
+		this(nome, apelido, rg, cpf, endereco, telefone1, telefone2);
+		this.id = id;
 		this.regiao = new Regiao(nomeRegiao);
 	}
 

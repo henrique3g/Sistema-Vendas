@@ -1,43 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="484.0" prefWidth="481.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.jhdev.controllers.DadosClientesController">
+<VBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="497.0" prefWidth="481.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.jhdev.controllers.DadosClientesController">
    <children>
-      <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="200.0">
+      <ToolBar prefHeight="40.0" prefWidth="200.0">
         <items>
-            <Button mnemonicParsing="false" text="Cancelar">
+          <Button fx:id="btnNew" mnemonicParsing="false" text="Novo">
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </padding></Button>
+               </padding>
+            </Button>
+            <Button fx:id="btnEdit" mnemonicParsing="false" text="Editar">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Button>
+            <Button fx:id="btnDelete" mnemonicParsing="false" text="Deletar">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Button>
+            <Pane prefHeight="35.0" prefWidth="189.0" />
+            <Button fx:id="btnCancel" mnemonicParsing="false" text="Cancelar">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Button>
         </items>
       </ToolBar>
-      <VBox minHeight="-Infinity" prefHeight="426.0" prefWidth="481.0" spacing="5.0" VBox.vgrow="ALWAYS">
+      <VBox fx:id="vb" minHeight="-Infinity" prefHeight="426.0" prefWidth="481.0" spacing="5.0" VBox.vgrow="ALWAYS">
          <children>
-            <Label text="Código:" />
-            <TextField fx:id="txtId" maxWidth="70.0">
+            <Label text="Código" />
+            <HBox prefWidth="200.0">
+               <children>
+                  <TextField fx:id="txtId" disable="true" maxWidth="70.0" promptText="Código">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </TextField>
+                  <Button fx:id="btnFind" mnemonicParsing="false" text="...">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <Label text="Nome" />
+            <TextField fx:id="txtNome" promptText="Nome">
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding></TextField>
-            <Label text="Nome:" />
-            <TextField fx:id="txtNome">
-               <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </padding></TextField>
-            <Label text="Apelido:" />
-            <TextField fx:id="txtApelido" maxWidth="330.0">
+            <Label text="Apelido" />
+            <TextField fx:id="txtApelido" maxWidth="330.0" promptText="Apelido">
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding></TextField>
             <HBox prefWidth="200.0">
                <children>
-                  <VBox prefWidth="100.0" HBox.hgrow="ALWAYS">
+                  <VBox prefWidth="100.0" spacing="5.0" HBox.hgrow="ALWAYS">
                      <children>
-                        <Label text="CPF:" />
-                        <TextField fx:id="txtCpf">
+                        <Label text="CPF" />
+                        <TextField fx:id="txtCpf" promptText="CPF">
                            <padding>
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                            </padding>
@@ -46,10 +81,10 @@
                            </VBox.margin></TextField>
                      </children>
                   </VBox>
-                  <VBox prefWidth="100.0" HBox.hgrow="ALWAYS">
+                  <VBox prefWidth="100.0" spacing="5.0" HBox.hgrow="ALWAYS">
                      <children>
-                        <Label text="RG:" />
-                        <TextField fx:id="txtRg" prefWidth="90.0">
+                        <Label text="RG" />
+                        <TextField fx:id="txtRg" prefWidth="90.0" promptText="RG">
                            <padding>
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                            </padding>
@@ -60,17 +95,17 @@
                   </VBox>
                </children>
             </HBox>
-            <Label text="Endereço:" />
-            <TextField fx:id="txtEndereco">
+            <Label text="Endereço" />
+            <TextField fx:id="txtEndereco" promptText="Endereço">
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding></TextField>
             <HBox prefWidth="200.0">
                <children>
-                  <VBox prefWidth="100.0" HBox.hgrow="ALWAYS">
+                  <VBox prefWidth="100.0" spacing="5.0" HBox.hgrow="ALWAYS">
                      <children>
-                        <Label text="Telefone:" />
-                        <TextField fx:id="txtTelefone1">
+                        <Label text="Telefone" />
+                        <TextField fx:id="txtTelefone1" promptText="Telefone">
                            <padding>
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                            </padding>
@@ -79,10 +114,10 @@
                            </VBox.margin></TextField>
                      </children>
                   </VBox>
-                  <VBox prefWidth="100.0" HBox.hgrow="ALWAYS">
+                  <VBox prefWidth="100.0" spacing="5.0" HBox.hgrow="ALWAYS">
                      <children>
-                        <Label text="Telefone(Opcional):" />
-                        <TextField fx:id="txtTelefone2" prefWidth="161.0">
+                        <Label text="Telefone(Opcional)" />
+                        <TextField fx:id="txtTelefone2" prefWidth="161.0" promptText="Telefone">
                            <padding>
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                            </padding>
@@ -93,15 +128,15 @@
                   </VBox>
                </children>
             </HBox>
-            <Label text="Região:" />
-            <HBox prefHeight="100.0" prefWidth="200.0">
+            <Label text="Região" />
+            <HBox prefWidth="461.0">
                <children>
-                  <ComboBox fx:id="cbRegiao" prefWidth="295.0" promptText="Regiões">
+                  <ComboBox fx:id="cbRegiao" prefHeight="35.0" prefWidth="235.0">
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </padding></ComboBox>
                   <Pane HBox.hgrow="ALWAYS" />
-                  <Button mnemonicParsing="false" prefWidth="90.0" text="Salvar">
+                  <Button fx:id="btnSave" mnemonicParsing="false" prefWidth="90.0" text="Salvar">
                      <padding>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </padding>

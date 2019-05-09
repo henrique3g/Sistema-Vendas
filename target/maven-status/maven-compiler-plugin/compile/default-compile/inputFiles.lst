@@ -19,4 +19,5 @@
 /home/jhenrique/dev/java/Sistema-Vendas/src/main/java/br/com/jhdev/models/beans/Venda.java
 /home/jhenrique/dev/java/Sistema-Vendas/src/main/java/br/com/jhdev/views/CadRegiao.java
 /home/jhenrique/dev/java/Sistema-Vendas/src/main/java/br/com/jhdev/views/View.java
+/home/jhenrique/dev/java/Sistema-Vendas/src/main/java/br/com/jhdev/models/dao/ClienteDao.java
 /home/jhenrique/dev/java/Sistema-Vendas/src/main/java/br/com/jhdev/models/dao/DaoRegiao.java

@@ -16,7 +16,7 @@ public class View extends Application {
 	private String view;
 
 	public enum ViewName {
-		REGIOES("Regioes"), LIST_CLIENTES("ListClientes"), DADOS_CLIENTES("DadosClientesN");
+		REGIOES("Regioes"), LIST_CLIENTES("ListClientesN"), DADOS_CLIENTES("DadosClientesN");
 		
 		public String valor;
 
@@ -33,7 +33,7 @@ public class View extends Application {
 		} catch (Exception e) {
 			Alert alert = new Alert(Alert.AlertType.ERROR, "Erro ao Abrir a view : " + this.view);
 			alert.showAndWait();
-			e.printStackTrace();
+			System.err.println(e.getMessage());
 		}
 	}
 	
@@ -44,7 +44,7 @@ public class View extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		Parent root = FXMLLoader.load(getClass().getResource("/fxml/" + view + ".fxml"));
-		System.out.println("Executou " + view + ".start()");
+		// System.out.println("Executou " + view + ".start()");
 		Scene scene = new Scene(root);
 		primaryStage.setScene(scene);
 		primaryStage.setTitle(title);

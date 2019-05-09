@@ -1,4 +1,4 @@
-package br.com.jhdev.models;
+package br.com.jhdev.models.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -24,6 +24,7 @@ public class ConnectionFactory {
 			return DriverManager.getConnection(URL, USER, PASSWORD);
 		} catch (ClassNotFoundException | SQLException e) {
 			Alert alert = new Alert(AlertType.ERROR, "Erro ao conectar com o banco!");
+			alert.setHeaderText(null);
 			alert.showAndWait();
 			throw new RuntimeException("Erro na conexão: ",e);
 		}
@@ -36,7 +37,7 @@ public class ConnectionFactory {
 			}
 			
 		} catch (SQLException e) {
-			e.printStackTrace();
+			System.err.println(e.getMessage());
 		}
 	}
 
@@ -47,7 +48,7 @@ public class ConnectionFactory {
 				stmt.close();
 			}
 		} catch (SQLException e) {
-			e.printStackTrace();
+			System.err.println(e.getMessage());
 		}
 	}
 
@@ -58,7 +59,7 @@ public class ConnectionFactory {
 				res.close();
 			}
 		} catch (SQLException e) {
-			e.printStackTrace();
+			System.err.println(e.getMessage());
 		}
 	}
 }

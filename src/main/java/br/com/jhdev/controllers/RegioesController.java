@@ -2,16 +2,19 @@ package br.com.jhdev.controllers;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.function.Predicate;
 
 import br.com.jhdev.models.beans.Regiao;
 import br.com.jhdev.models.dao.DaoRegiao;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -19,6 +22,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 
 /**
@@ -53,6 +57,9 @@ public class RegioesController implements Initializable {
     private TextField txtId;
 
     @FXML
+    private TextField txtFind;
+
+    @FXML
     private Button btnCancel;
 
     @FXML
@@ -71,6 +78,8 @@ public class RegioesController implements Initializable {
     private ToggleGroup tipoPesquisa;
 
     private int stateSave;
+
+    private ObservableList<Regiao> obsReg = null;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -95,7 +104,7 @@ public class RegioesController implements Initializable {
             
             txtNome.requestFocus();
             
-            updateTable();
+            updateTable(txtFind.getText());
         });
         
         btnNew.setOnAction(e -> {
@@ -124,7 +133,7 @@ public class RegioesController implements Initializable {
             alert.showAndWait().ifPresent(b -> {
                 if(b == ButtonType.YES){
                     new DaoRegiao().delete(rg.getId());
-                    updateTable();
+                    updateTable(txtFind.getText());
                 }
             });
         });
@@ -138,12 +147,35 @@ public class RegioesController implements Initializable {
             ((Stage)btnCancel.getScene().getWindow()).close();
         });
         
-        updateTable();
+        txtFind.setOnKeyReleased(e -> {
+            if(e.getCode().isLetterKey() || e.getCode() == KeyCode.BACK_SPACE){
+                updateTable(txtFind.getText());
+            }
+        });
+
+        initTable();
     }
     
+    private void updateTable(String value){
+        FilteredList<Regiao> regioes = new FilteredList<>(obsReg);
+        Predicate<Regiao> filter = null;
+        RadioButton radio = (RadioButton)tipoPesquisa.getSelectedToggle();
+        
+        
+        
+        if(radio.getText().equals("Nome")){
+            filter = i -> i.getNome().toUpperCase().contains(value.toUpperCase());
+        }else{
+            filter = i -> i.getPovoados().toUpperCase().contains(value.toUpperCase());
+        }
+
+
+        regioes.setPredicate(filter);
+        tblRegioes.setItems(regioes);
+    }
     
-    private void updateTable(){
-        ObservableList<Regiao> obsReg = FXCollections.observableArrayList(new DaoRegiao().readAll());
+    private void initTable(){
+        obsReg = FXCollections.observableArrayList(new DaoRegiao().readAll());
         
         colId.setCellValueFactory(new PropertyValueFactory<>("id"));
         colNome.setCellValueFactory(new PropertyValueFactory<>("nome"));

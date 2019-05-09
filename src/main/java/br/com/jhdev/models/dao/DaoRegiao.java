@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.jhdev.models.ConnectionFactory;
+import br.com.jhdev.models.dao.ConnectionFactory;
 import br.com.jhdev.models.beans.Regiao;
 
 /**
@@ -30,7 +30,7 @@ public class DaoRegiao {
 			stmt.executeUpdate();
 			return 1;
 		} catch (SQLException e) {
-			e.printStackTrace();
+			System.err.println(e.getMessage());
 			//System.err.println("Mens: " + e.getMessage() + " - CodErro: " + e.getErrorCode());
 			return e.getErrorCode();
 		} finally {
@@ -54,7 +54,7 @@ public class DaoRegiao {
 			}
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			System.err.println(e.getMessage());
 		}finally{
 			ConnectionFactory.closeConnection(con, stmt, res);
 		}
@@ -77,7 +77,7 @@ public class DaoRegiao {
 				listRegiao.add(new Regiao(res.getInt(1), res.getString(2), res.getString(3)));
 			}
 		} catch (SQLException e) {
-			e.printStackTrace();
+			System.err.println(e.getMessage());
 		}finally{
 			ConnectionFactory.closeConnection(con, stmt, res);
 		}
@@ -98,7 +98,7 @@ public class DaoRegiao {
 			stmt.executeUpdate();
 			return 1;
 		} catch (SQLException e) {
-			e.printStackTrace();
+			System.err.println(e.getMessage());
 			return e.getErrorCode();
 		}finally{
 			ConnectionFactory.closeConnection(con, stmt);
@@ -117,7 +117,7 @@ public class DaoRegiao {
 			System.out.println(stmt.executeUpdate());
 			return 1;
 		} catch (SQLException e) {
-			e.printStackTrace();
+			System.err.println(e.getMessage());
 			return e.getErrorCode();
 		}finally{
 			ConnectionFactory.closeConnection(con, stmt);

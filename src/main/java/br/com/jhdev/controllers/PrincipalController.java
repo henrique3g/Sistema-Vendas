@@ -37,7 +37,7 @@ public class PrincipalController implements Initializable {
 		
 		menuClose.setOnAction(e -> System.exit(0));
 		
-		btnClientes.setOnAction(event -> new View("Clientes", "ListClientesN"));
+		btnClientes.setOnAction(event -> new View("Clientes", ViewName.DADOS_CLIENTES));
 
 	}
 

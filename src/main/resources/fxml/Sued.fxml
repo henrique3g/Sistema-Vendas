@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="211.0" prefWidth="548.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.jhdev.controllers.SuedController">
+   <children>
+      <Button fx:id="btnPerg" layoutX="335.0" layoutY="14.0" mnemonicParsing="false" prefWidth="95.0" text="Perguntar" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="90.0">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+      <TextField fx:id="txtPerg" layoutX="14.0" layoutY="14.0" prefHeight="35.0" prefWidth="314.0" promptText="Digite sua pergunta" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="115.0" AnchorPane.topAnchor="90.0">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></TextField>
+      <Label fx:id="lblResp" alignment="CENTER" contentDisplay="CENTER" layoutX="189.0" layoutY="88.0" textAlignment="CENTER" textFill="RED" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="150.0">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font></Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="130.0" layoutY="14.0" text="SUED" textAlignment="CENTER" textFill="RED" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+         <font>
+            <Font name="System Bold" size="50.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
