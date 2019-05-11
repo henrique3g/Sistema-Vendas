@@ -10,13 +10,13 @@ import javafx.stage.Stage;
 /**
  * PrincipalView
  */
-public class DadosClientes extends Application {
+public class Clientes extends Application {
 	private static Stage stage;
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		stage = primaryStage;
-		Parent root = FXMLLoader.load(getClass().getResource("/fxml/DadosClientes.fxml"));
-		System.out.println("Executou DadosClientes.start()");
+		Parent root = FXMLLoader.load(getClass().getResource("/fxml/Clientes.fxml"));
+		System.out.println("Executou Clientes.start()");
 		Scene scene = new Scene(root);
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Clientes");

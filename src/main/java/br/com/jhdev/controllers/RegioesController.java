@@ -5,7 +5,7 @@ import java.util.ResourceBundle;
 import java.util.function.Predicate;
 
 import br.com.jhdev.models.beans.Regiao;
-import br.com.jhdev.models.dao.DaoRegiao;
+import br.com.jhdev.models.dao.RegiaoDao;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -21,6 +21,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
@@ -85,26 +86,21 @@ public class RegioesController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         
         btnSave.setOnAction(e -> {
-            Regiao regiao = new Regiao();
-            
-            regiao.setId(Integer.parseInt(txtId.getText()));
-            regiao.setNome(txtNome.getText());
-            regiao.setPovoados(txtPovoados.getText());
-            
-            if(stateSave == 1) {
-                System.out.println(new DaoRegiao().create(regiao));
-                
-            }else if(stateSave == 2) {
-                System.out.println(new DaoRegiao().update(regiao));
+            Regiao regiao = getInputs();
+            if(checkData(regiao)){
 
+                if(stateSave == 1) {
+                    System.out.println(new RegiaoDao().create(regiao));
+                }else if(stateSave == 2) {
+                    System.out.println(new RegiaoDao().update(regiao));
+                }
+                clearInputs();
+                
+                txtNome.requestFocus();
+                initTable();
+                updateTable(txtFind.getText());
             }
             
-            
-            clearInputs();
-            
-            txtNome.requestFocus();
-            
-            updateTable(txtFind.getText());
         });
         
         btnNew.setOnAction(e -> {
@@ -117,13 +113,11 @@ public class RegioesController implements Initializable {
 
         btnEdit.setOnAction(e -> {
             Regiao rg = tblRegioes.getSelectionModel().getSelectedItem();
-            txtId.setText(Integer.toString(rg.getId()));
-            txtNome.setText(rg.getNome());
-            txtPovoados.setText(rg.getPovoados());
+            stateSave = 2;
+            setInputs(rg);
             tabPane.getTabs().get(1).setDisable(false);
             tabPane.getSelectionModel().select(1);
             txtNome.requestFocus();
-            stateSave = 2;
         });
 
         btnDelete.setOnAction(e -> {
@@ -132,7 +126,7 @@ public class RegioesController implements Initializable {
             alert.setHeaderText(null);
             alert.showAndWait().ifPresent(b -> {
                 if(b == ButtonType.YES){
-                    new DaoRegiao().delete(rg.getId());
+                    new RegiaoDao().delete(rg.getId());
                     updateTable(txtFind.getText());
                 }
             });
@@ -155,7 +149,46 @@ public class RegioesController implements Initializable {
 
         initTable();
     }
+
+    private boolean checkData(Regiao regiao){
+        if(regiao.getNome().isEmpty()){
+            alertValidate("Digite o nome da região!");
+            txtNome.requestFocus();
+            return false;
+        }
+        if(regiao.getPovoados().isEmpty()){
+            alertValidate("Digite os povoados da região!");
+            txtPovoados.requestFocus();
+            return false;
+        }
+        return true;
+    }
+
+    private void alertValidate(String value){
+        Alert alert = new Alert(AlertType.WARNING, value);
+        alert.setHeaderText(null);
+        alert.showAndWait();
+    }
     
+    private void setInputs(Regiao regiao){
+        if(stateSave == 2){
+            txtId.setText(Integer.toString(regiao.getId()));
+        }
+        txtNome.setText(regiao.getNome());
+        txtPovoados.setText(regiao.getPovoados());
+        
+    }
+
+    private Regiao getInputs(){
+        Regiao regiao = new Regiao();
+        if(stateSave == 2){
+            regiao.setId(Integer.parseInt(txtId.getText()));
+        }    
+        regiao.setNome(txtNome.getText());
+        regiao.setPovoados(txtPovoados.getText());
+        return regiao;
+    }
+
     private void updateTable(String value){
         FilteredList<Regiao> regioes = new FilteredList<>(obsReg);
         Predicate<Regiao> filter = null;
@@ -174,8 +207,9 @@ public class RegioesController implements Initializable {
         tblRegioes.setItems(regioes);
     }
     
+
     private void initTable(){
-        obsReg = FXCollections.observableArrayList(new DaoRegiao().readAll());
+        obsReg = FXCollections.observableArrayList(new RegiaoDao().readAll());
         
         colId.setCellValueFactory(new PropertyValueFactory<>("id"));
         colNome.setCellValueFactory(new PropertyValueFactory<>("nome"));

@@ -3,7 +3,7 @@
 /home/jhenrique/dev/java/Sistema-Vendas/src/main/java/br/com/jhdev/controllers/CategoriasController.java
 /home/jhenrique/dev/java/Sistema-Vendas/src/main/java/br/com/jhdev/models/beans/Movimento.java
 /home/jhenrique/dev/java/Sistema-Vendas/src/main/java/br/com/jhdev/MainApp.java
-/home/jhenrique/dev/java/Sistema-Vendas/src/main/java/br/com/jhdev/controllers/DadosClientesController.java
+/home/jhenrique/dev/java/Sistema-Vendas/src/main/java/br/com/jhdev/controllers/ClientesController.java
 /home/jhenrique/dev/java/Sistema-Vendas/src/main/java/br/com/jhdev/models/beans/Cliente.java
 /home/jhenrique/dev/java/Sistema-Vendas/src/main/java/br/com/jhdev/models/ConnectionFactory.java
 /home/jhenrique/dev/java/Sistema-Vendas/src/main/java/br/com/jhdev/controllers/ListClientesController.java
@@ -14,10 +14,10 @@
 /home/jhenrique/dev/java/Sistema-Vendas/src/main/java/br/com/jhdev/views/ListClientes.java
 /home/jhenrique/dev/java/Sistema-Vendas/src/main/java/br/com/jhdev/models/beans/Regiao.java
 /home/jhenrique/dev/java/Sistema-Vendas/src/main/java/br/com/jhdev/models/beans/Fornecedor.java
-/home/jhenrique/dev/java/Sistema-Vendas/src/main/java/br/com/jhdev/views/DadosClientes.java
+/home/jhenrique/dev/java/Sistema-Vendas/src/main/java/br/com/jhdev/views/Clientes.java
 /home/jhenrique/dev/java/Sistema-Vendas/src/main/java/br/com/jhdev/controllers/RegioesController.java
 /home/jhenrique/dev/java/Sistema-Vendas/src/main/java/br/com/jhdev/models/beans/Venda.java
 /home/jhenrique/dev/java/Sistema-Vendas/src/main/java/br/com/jhdev/views/CadRegiao.java
 /home/jhenrique/dev/java/Sistema-Vendas/src/main/java/br/com/jhdev/views/View.java
 /home/jhenrique/dev/java/Sistema-Vendas/src/main/java/br/com/jhdev/models/dao/ClienteDao.java
-/home/jhenrique/dev/java/Sistema-Vendas/src/main/java/br/com/jhdev/models/dao/DaoRegiao.java
+/home/jhenrique/dev/java/Sistema-Vendas/src/main/java/br/com/jhdev/models/dao/RegiaoDao.java

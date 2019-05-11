@@ -14,17 +14,23 @@ import br.com.jhdev.models.beans.Categoria;
  */
 public class CategoriaDao {
 
-	public int create(Categoria cat){
-		Connection con = ConnectionFactory.getConnection();
-		PreparedStatement stmt = null;
-		final String sql = "INSERT INTO categorias(nome) VALUES (?)";
+	private Connection con = null;
+	private PreparedStatement stmt = null;
+	private String sql = "";
+	private ResultSet res = null;
+
+	public String create(Categoria cat){
+		con = ConnectionFactory.getConnection();
+		
+		sql = "INSERT INTO categorias(nome) VALUES (?)";
+		
 		try {
 			stmt = con.prepareStatement(sql);
 			stmt.setString(1, cat.getNome());
 			stmt.executeUpdate();
-			return 1;
+			return "ok";
 		} catch (SQLException e) {
-			return e.getErrorCode();
+			return e.getMessage();
 		}finally{
 			ConnectionFactory.closeConnection(con, stmt);
 		}
@@ -34,10 +40,10 @@ public class CategoriaDao {
 	public List<Categoria> readAll(){
 		List<Categoria> categorias = new ArrayList<>();
 		
-		Connection con = ConnectionFactory.getConnection();
-		PreparedStatement stmt = null;
-		ResultSet res = null;
-		final String sql = "SELECT * FROM categorias ORDER BY nome";
+		con = ConnectionFactory.getConnection();
+		
+		sql = "SELECT * FROM categorias ORDER BY nome";
+		
 		try {
 			stmt = con.prepareStatement(sql);
 			res = stmt.executeQuery();
@@ -51,5 +57,56 @@ public class CategoriaDao {
 		}
 		
 		return categorias;
+	}
+
+	public Categoria read(int idCat){
+		con = ConnectionFactory.getConnection();
+		sql = "SELECT * FROM categorias WHERE idCategoria = ?";
+
+		try {
+			stmt = con.prepareStatement(sql);
+			stmt.setInt(1, idCat);
+			res = stmt.executeQuery();
+			res.next();
+			return new Categoria(res.getInt(1), res.getString(2));
+		} catch (SQLException e) {
+			System.err.println(e.getMessage());
+			return null;
+		} finally {
+			ConnectionFactory.closeConnection(con, stmt, res);
+		}
+	}
+
+	public String update(Categoria cat){
+		con = ConnectionFactory.getConnection();
+		sql = "UPDATE categorias SET nome = ? WHERE idCategoria = ? LIMIT 1";
+		try {
+			stmt = con.prepareStatement(sql);
+			stmt.setString(1, cat.getNome());
+			stmt.setInt(2, cat.getId());
+			stmt.executeQuery();
+			return "ok";
+		} catch (SQLException e) {
+			System.err.println(e.getMessage());
+			return e.getMessage();
+		} finally {
+			ConnectionFactory.closeConnection(con, stmt);	
+		}
+	}
+
+	public String delete(int idCat){
+		con = ConnectionFactory.getConnection();
+		sql = "DELETE FROM categorias WHERE idCategoria = ? LIMIT 1";
+		try {
+			stmt = con.prepareStatement(sql);
+			stmt.setInt(1, idCat);
+			stmt.executeUpdate();
+			return "ok";
+		} catch (SQLException e) {
+			System.err.println(e.getMessage());
+			return e.getMessage();
+		} finally {
+			ConnectionFactory.closeConnection(con, stmt);
+		}
 	}
 }

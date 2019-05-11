@@ -105,29 +105,27 @@ public class ClienteDao {
 			stmt.setInt(8, cliente.getRegiao().getId());
 			stmt.setInt(9, cliente.getId());
 			stmt.executeUpdate();
-			System.out.println("retornou 1 daocliente");
 			return "ok";
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 			
-			//System.out.println("CodeErroSql");
 			return e.getMessage();
-		}finally {
+		} finally {
 			ConnectionFactory.closeConnection(con, stmt);
 		}
 	}
 
-	public int delete(int idCliente){
+	public String delete(int idCliente){
 		con = ConnectionFactory.getConnection();
 		sql = "DELETE FROM `clientes` WHERE `clientes`.`idCliente` = ? LIMIT 1";
 		try {
 			stmt = con.prepareStatement(sql);
 			stmt.setInt(1, idCliente);			
 			stmt.executeUpdate();
-			return 1;
+			return "ok";
 		} catch (SQLException e) {
 			System.err.println(e.getMessage());
-			return e.getErrorCode();
+			return e.getMessage();
 		} finally {
 			ConnectionFactory.closeConnection(con, stmt);
 		}

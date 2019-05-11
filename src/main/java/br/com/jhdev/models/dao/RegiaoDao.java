@@ -11,9 +11,9 @@ import br.com.jhdev.models.dao.ConnectionFactory;
 import br.com.jhdev.models.beans.Regiao;
 
 /**
- * DaoRegiao
+ * RegiaoDao
  */
-public class DaoRegiao {
+public class RegiaoDao {
 	
 	public int create(Regiao regiao) {
 		

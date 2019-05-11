@@ -6,7 +6,7 @@ import java.util.ResourceBundle;
 import br.com.jhdev.models.beans.Cliente;
 import br.com.jhdev.models.beans.Regiao;
 import br.com.jhdev.models.dao.ClienteDao;
-import br.com.jhdev.models.dao.DaoRegiao;
+import br.com.jhdev.models.dao.RegiaoDao;
 import br.com.jhdev.util.Formatter;
 import br.com.jhdev.util.TextFieldFormatter;
 import br.com.jhdev.views.View;
@@ -30,7 +30,7 @@ import javafx.stage.Stage;
  *
  * @author JHenrique
  */
-public class DadosClientesController implements Initializable {
+public class ClientesController implements Initializable {
 
 	@FXML
 	private VBox root;
@@ -139,7 +139,7 @@ public class DadosClientesController implements Initializable {
 	}
 
 	private void initComboBox() {
-		ObservableList<Regiao> obs = FXCollections.observableArrayList(new DaoRegiao().readAll());
+		ObservableList<Regiao> obs = FXCollections.observableArrayList(new RegiaoDao().readAll());
 
 		cbRegiao.setItems(obs);
 	}
@@ -178,15 +178,19 @@ public class DadosClientesController implements Initializable {
 		alert.setHeaderText(null);
 		alert.showAndWait().ifPresent(response -> {
 			if (response == ButtonType.YES) {
-				int result = new ClienteDao().delete(cliente.getId());
+				String result = new ClienteDao().delete(cliente.getId());
 				System.out.println(result);
-				if (result == 1) {
+				if (result.equals("ok")) {
 					Alert a = new Alert(AlertType.INFORMATION, "Cliente removido com sucesso!", ButtonType.OK);
 					a.setHeaderText(null);
 					a.showAndWait();
 					clearInputs();
 					setDisableButtons(true);
 					setDisableInputs(true);
+				} else {
+					Alert a = new Alert(AlertType.ERROR, "Erro ao excluir: " + result, ButtonType.OK);
+					a.setHeaderText(null);
+					a.showAndWait();
 				}
 			}
 		});
@@ -276,34 +280,42 @@ public class DadosClientesController implements Initializable {
 
 		if (cliente.getNome().isEmpty()) {
 			alertValidate("Nome não pode ficar vazio!");
+			txtNome.requestFocus();
 			return false;
 		}
 		if (cliente.getApelido().isEmpty()) {
 			alertValidate("Apelido não pode estar vazio!");
+			txtApelido.requestFocus();
 			return false;
 		}
 		if (cliente.getCpf().length() < 11) {
 			alertValidate("CPF invalido!");
+			txtCpf.requestFocus();
 			return false;
 		}
 		if (cliente.getRg().isEmpty()) {
 			alertValidate("RG não pode estar vazio!");
+			txtRg.redo();
 			return false;
 		}
 		if (cliente.getEndereco().isEmpty()) {
 			alertValidate("Endereço não pode estar vazio!");
+			txtEndereco.requestFocus();
 			return false;
 		}
 		if (cliente.getTelefone1().length() < 11) {
 			alertValidate("Telefone invalido!");
+			txtTelefone1.requestFocus();
 			return false;
 		}
 		if (!cliente.getTelefone2().isEmpty() && cliente.getTelefone2().length() < 11) {
 			alertValidate("Telefone opcional invalido!");
+			txtTelefone2.requestFocus();
 			return false;
 		}
 		if (cliente.getRegiao() == null) {
 			alertValidate("Escolha uma região!");
+			cbRegiao.requestFocus();
 			return false;
 		}
 		return true;
@@ -322,10 +334,12 @@ public class DadosClientesController implements Initializable {
 		}
 		if (code.contains(UNIQUE_CPF)) {
 			alertValidate("Esse CPF ja foi cadastrado!");
+			txtCpf.requestFocus();
 			return false;
 		}
 		if (code.contains(UNIQUE_RG)) {
 			alertValidate("Esse RG ja foi cadastrado!");
+			txtRg.requestFocus();
 			return false;
 		}
 		return false;

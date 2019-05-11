@@ -1,9 +1,9 @@
-br/com/jhdev/controllers/DadosClientesController.class
+br/com/jhdev/controllers/ClientesController.class
 br/com/jhdev/models/beans/Movimento.class
 br/com/jhdev/controllers/PrincipalController.class
 br/com/jhdev/views/View$ViewName.class
 br/com/jhdev/models/beans/Cliente.class
-br/com/jhdev/models/dao/DaoRegiao.class
+br/com/jhdev/models/dao/RegiaoDao.class
 br/com/jhdev/models/beans/Produto.class
 br/com/jhdev/models/beans/Categoria.class
 br/com/jhdev/models/beans/Caixa.class
@@ -14,7 +14,7 @@ br/com/jhdev/models/dao/Dao.class
 br/com/jhdev/MainApp.class
 br/com/jhdev/controllers/CategoriasController.class
 br/com/jhdev/models/beans/Fornecedor.class
-br/com/jhdev/views/DadosClientes.class
+br/com/jhdev/views/Clientes.class
 br/com/jhdev/views/View.class
 br/com/jhdev/controllers/ListClientesController.class
 br/com/jhdev/models/beans/Compra.class

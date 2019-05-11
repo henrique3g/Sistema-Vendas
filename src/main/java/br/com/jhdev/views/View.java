@@ -16,7 +16,7 @@ public class View extends Application {
 	private String view;
 
 	public enum ViewName {
-		REGIOES("Regioes"), LIST_CLIENTES("ListClientesN"), DADOS_CLIENTES("DadosClientesN");
+		REGIOES("Regioes"), LIST_CLIENTES("ListClientesN"), CLIENTES("Clientes"), SOBRE("Sobre");
 		
 		public String valor;
 

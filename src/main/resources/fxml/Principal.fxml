@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.jhdev.controllers.PrincipalController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.jhdev.controllers.PrincipalController">
    <children>
       <MenuBar prefHeight="29.0" prefWidth="800.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
-          <Menu mnemonicParsing="false" text="PDV">
+          <Menu mnemonicParsing="false" style="-fx-text-fill: #ffffff;" text="PDV">
             <items>
               <MenuItem mnemonicParsing="false" text="Venda" />
             </items>
@@ -35,7 +38,7 @@
             </Menu>
           <Menu mnemonicParsing="false" text="Sobre">
             <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+              <MenuItem fx:id="menuSobre" mnemonicParsing="false" text="About" />
             </items>
           </Menu>
             <Menu mnemonicParsing="false" text="Sair">
@@ -45,17 +48,34 @@
             </Menu>
         </menus>
       </MenuBar>
-      <Button fx:id="btnClientes" contentDisplay="TOP" graphicTextGap="10.0" layoutX="14.0" layoutY="209.0" mnemonicParsing="false" prefHeight="139.0" prefWidth="101.0" style="-fx-background-color: #34a6d3;" text="Clientes" textFill="#ebf2f5">
+      <JFXButton fx:id="btnClientes" buttonType="RAISED" contentDisplay="TOP" layoutX="14.0" layoutY="105.0" maxHeight="80.0" maxWidth="80.0" prefHeight="80.0" prefWidth="80.0" ripplerFill="WHITE" style="-fx-background-color: #17375E;" text="Clientes" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
          <graphic>
-            <ImageView fitHeight="108.0" fitWidth="107.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../images/boss.png" />
+                  <Image url="@../images/specialist-user%20(3).png" />
                </image>
             </ImageView>
          </graphic>
+      </JFXButton>
+      <JFXButton fx:id="btnRegioes" buttonType="RAISED" contentDisplay="TOP" layoutX="14.0" layoutY="192.0" maxHeight="93.0" maxWidth="80.0" prefHeight="80.0" prefWidth="80.0" ripplerFill="WHITE" style="-fx-background-color: #17375E;" text="Regiões" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="22.0" />
+            <Font name="System Bold" size="13.0" />
          </font>
-      </Button>
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/worldwide.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <ImageView fitHeight="430.0" fitWidth="462.0" layoutX="435.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="145.0" AnchorPane.leftAnchor="435.0" AnchorPane.rightAnchor="435.655029296875" AnchorPane.topAnchor="145.0">
+         <image>
+            <Image url="@../images/simbol-color-text.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
