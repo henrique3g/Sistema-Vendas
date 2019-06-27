@@ -1,81 +1,137 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.jhdev.controllers.PrincipalController">
-   <children>
-      <MenuBar prefHeight="29.0" prefWidth="800.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <menus>
-          <Menu mnemonicParsing="false" style="-fx-text-fill: #ffffff;" text="PDV">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Venda" />
-            </items>
-          </Menu>
+<BorderPane minWidth="702.0" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.jhdev.controllers.PrincipalController">
+   <top>
+      <MenuBar prefHeight="29.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+         <menus>
+            <Menu mnemonicParsing="false" style="-fx-text-fill: #ffffff;" text="PDV">
+               <items>
+                  <MenuItem fx:id="menuVenda" mnemonicParsing="false" text="Venda" />
+                  <MenuItem fx:id="menuCaixa" mnemonicParsing="false" text="Caixa" />
+               </items>
+            </Menu>
             <Menu mnemonicParsing="false" text="Gerencial">
                <items>
                   <MenuItem mnemonicParsing="false" text="Recebimentos" />
                </items>
             </Menu>
-          <Menu mnemonicParsing="false" text="Cadastros">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Produtos" />
+            <Menu mnemonicParsing="false" text="Cadastros">
+               <items>
+                  <MenuItem fx:id="menuProdutos" mnemonicParsing="false" text="Produtos" />
                   <MenuItem fx:id="menuClientes" mnemonicParsing="false" text="Clientes" />
-                  <MenuItem mnemonicParsing="false" text="Categoria" />
+                  <MenuItem fx:id="menuCategoria" mnemonicParsing="false" text="Categoria" />
                   <MenuItem fx:id="menuCadRegiao" mnemonicParsing="false" text="Região" />
-            </items>
-          </Menu>
+               </items>
+            </Menu>
             <Menu mnemonicParsing="false" text="Relatórios">
                <items>
                   <MenuItem mnemonicParsing="false" text="Clientes Atrasados" />
                </items>
             </Menu>
-          <Menu mnemonicParsing="false" text="Sobre">
-            <items>
-              <MenuItem fx:id="menuSobre" mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
+            <Menu mnemonicParsing="false" text="Sobre">
+               <items>
+                  <MenuItem fx:id="menuSobre" mnemonicParsing="false" text="About" />
+               </items>
+            </Menu>
             <Menu mnemonicParsing="false" text="Sair">
                <items>
                   <MenuItem fx:id="menuClose" mnemonicParsing="false" text="Sair" />
                </items>
             </Menu>
-        </menus>
+         </menus>
       </MenuBar>
-      <JFXButton fx:id="btnClientes" buttonType="RAISED" contentDisplay="TOP" layoutX="14.0" layoutY="105.0" maxHeight="80.0" maxWidth="80.0" prefHeight="80.0" prefWidth="80.0" ripplerFill="WHITE" style="-fx-background-color: #17375E;" text="Clientes" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-         <graphic>
-            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/specialist-user%20(3).png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </JFXButton>
-      <JFXButton fx:id="btnRegioes" buttonType="RAISED" contentDisplay="TOP" layoutX="14.0" layoutY="192.0" maxHeight="93.0" maxWidth="80.0" prefHeight="80.0" prefWidth="80.0" ripplerFill="WHITE" style="-fx-background-color: #17375E;" text="Regiões" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-         <graphic>
-            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/worldwide.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </JFXButton>
-      <ImageView fitHeight="430.0" fitWidth="462.0" layoutX="435.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="145.0" AnchorPane.leftAnchor="435.0" AnchorPane.rightAnchor="435.655029296875" AnchorPane.topAnchor="145.0">
+   </top>
+   <left>
+      <VBox alignment="CENTER" prefHeight="691.0" prefWidth="120.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <JFXButton fx:id="btnClientes" buttonType="RAISED" contentDisplay="TOP" maxHeight="80.0" maxWidth="100.0" prefHeight="80.0" prefWidth="100.0" ripplerFill="WHITE" style="-fx-background-color: #17375E;" text="Clientes" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/specialist-user%20(3).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btnRegioes" buttonType="RAISED" contentDisplay="TOP" maxHeight="93.0" maxWidth="100.0" prefHeight="80.0" prefWidth="100.0" ripplerFill="WHITE" style="-fx-background-color: #17375E;" text="Regiões" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/worldwide.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btCat" buttonType="RAISED" contentDisplay="TOP" maxHeight="93.0" maxWidth="100.0" prefHeight="80.0" prefWidth="100.0" ripplerFill="WHITE" style="-fx-background-color: #17375E;" text="Categorias" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/category.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btProdutos" buttonType="RAISED" contentDisplay="TOP" maxHeight="80.0" maxWidth="100.0" prefHeight="80.0" prefWidth="100.0" ripplerFill="WHITE" style="-fx-background-color: #17375E;" text="Produtos" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/product.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btCaixa" buttonType="RAISED" contentDisplay="TOP" maxHeight="80.0" maxWidth="100.0" prefHeight="80.0" prefWidth="100.0" ripplerFill="WHITE" style="-fx-background-color: #17375E;" text="Caixa" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/cash-register.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </left>
+   <right>
+      <VBox prefHeight="200.0" prefWidth="120.0" BorderPane.alignment="CENTER" />
+   </right>
+   <center>
+      <ImageView fitHeight="430.0" fitWidth="462.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
          <image>
             <Image url="@../images/simbol-color-text.png" />
          </image>
       </ImageView>
-   </children>
-</AnchorPane>
+   </center>
+</BorderPane>

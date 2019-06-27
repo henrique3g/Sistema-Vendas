@@ -1,80 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="434.0" prefWidth="439.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="main.controllers.CategoriasController">
+<VBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.jhdev.controllers.CategoriaController">
    <children>
-      <BorderPane prefHeight="434.0" prefWidth="439.0" AnchorPane.bottomAnchor="0.0">
-         <bottom>
-            <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-              <items>
-                <Button fx:id="btnInserir" mnemonicParsing="false" text="Inserir" />
-                  <Button fx:id="btnEditar" mnemonicParsing="false" text="Editar" />
-                  <Button fx:id="btnExcluir" mnemonicParsing="false" text="Excluir" />
-                  <HBox prefHeight="39.0" prefWidth="125.0" />
-                  <Button fx:id="btnSair" mnemonicParsing="false" text="Sair" textAlignment="CENTER" />
-              </items>
-               <BorderPane.margin>
-                  <Insets />
-               </BorderPane.margin>
-            </ToolBar>
-         </bottom>
-         <center>
-            <TableView fx:id="tblCat" prefHeight="299.0" prefWidth="507.0" BorderPane.alignment="CENTER">
-              <columns>
-                <TableColumn fx:id="colId" prefWidth="100.0" text="Código" />
-                <TableColumn fx:id="colNome" prefWidth="300.0" text="Nome" />
-              </columns>
-               <BorderPane.margin>
-                  <Insets left="10.0" right="10.0" top="10.0" />
-               </BorderPane.margin>
-            </TableView>
-         </center>
-         <top>
-            <GridPane BorderPane.alignment="CENTER">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="10.0" prefWidth="250.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints maxHeight="31.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
-              </rowConstraints>
+      <ToolBar prefHeight="40.0" prefWidth="200.0">
+         <items>
+            <Button fx:id="btNew" mnemonicParsing="false" text="Novo">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Button>
+            <Button fx:id="btEdit" mnemonicParsing="false" text="Editar">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Button>
+            <Button fx:id="btDelete" mnemonicParsing="false" text="Excluir">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Button>
+            <Pane prefHeight="36.0" prefWidth="315.0" />
+            <Button fx:id="btCancel" mnemonicParsing="false" text="Cancelar">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Button>
+         </items>
+      </ToolBar>
+      <HBox alignment="BOTTOM_CENTER" prefHeight="0.0" prefWidth="600.0" spacing="10.0">
+         <children>
+            <VBox prefHeight="52.0" prefWidth="80.0" spacing="5.0">
                <children>
-                  <Label text="Código">
-                     <GridPane.margin>
-                        <Insets bottom="5.0" />
-                     </GridPane.margin>
-                  </Label>
-                  <Label text="Nome:" GridPane.columnIndex="1">
-                     <GridPane.margin>
-                        <Insets bottom="5.0" left="10.0" />
-                     </GridPane.margin>
-                  </Label>
-                  <Button fx:id="btnSalvar" mnemonicParsing="false" text="Salvar" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                     <GridPane.margin>
-                        <Insets left="10.0" />
-                     </GridPane.margin>
-                  </Button>
-                  <TextField fx:id="txtId" disable="true" editable="false" prefWidth="100.0" promptText="Código" GridPane.rowIndex="1" />
-                  <TextField fx:id="txtNome" promptText="Nome da Categoria" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <GridPane.margin>
-                        <Insets left="10.0" />
-                     </GridPane.margin>
+                  <Label text="Código" />
+                  <TextField fx:id="tfCod" disable="true" prefHeight="36.0" prefWidth="74.0" promptText="Código">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
                   </TextField>
                </children>
-               <BorderPane.margin>
-                  <Insets left="10.0" />
-               </BorderPane.margin>
-            </GridPane>
-         </top>
-      </BorderPane>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label text="Nome" />
+                  <TextField fx:id="tfNome" promptText="Nome da Categoria">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </TextField>
+               </children>
+            </VBox>
+            <Button fx:id="btSave" mnemonicParsing="false" text="Salvar">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Button>
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+         </padding>
+      </HBox>
+      <TableView fx:id="tblCategorias" fixedCellSize="30.0" prefHeight="200.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
+         <columns>
+            <TableColumn fx:id="colCod" prefWidth="75.0" text="Código" />
+            <TableColumn fx:id="colNome" prefWidth="507.0" text="Nome da Categoria" />
+         </columns>
+      </TableView>
    </children>
-</AnchorPane>
+</VBox>

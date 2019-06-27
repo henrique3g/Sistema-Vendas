@@ -341,7 +341,10 @@ public class ClientesController implements Initializable {
 			alertValidate("Esse RG ja foi cadastrado!");
 			txtRg.requestFocus();
 			return false;
+		} else {
+			alertValidate("value");
 		}
+		
 		return false;
 	}
 }

@@ -47,4 +47,8 @@ public class Formatter {
 			return telefone;
         }
 	}
+
+	public static String formatMoney(double valor){
+		return String.format("%,.2f", valor);
+	}
 }

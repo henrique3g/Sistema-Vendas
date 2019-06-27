@@ -84,7 +84,7 @@ public class CategoriaDao {
 			stmt = con.prepareStatement(sql);
 			stmt.setString(1, cat.getNome());
 			stmt.setInt(2, cat.getId());
-			stmt.executeQuery();
+			stmt.executeUpdate();
 			return "ok";
 		} catch (SQLException e) {
 			System.err.println(e.getMessage());

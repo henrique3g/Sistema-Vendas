@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="502.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.jhdev.controllers.CaixaController">
+   <children>
+      <ToolBar prefHeight="40.0" prefWidth="200.0">
+        <items>
+            <HBox prefHeight="36.0" prefWidth="586.0">
+               <children>
+                  <Button fx:id="btLancamento" mnemonicParsing="false" text="Fazer lançamento">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </Button>
+                  <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                  <Button fx:id="btCancel" mnemonicParsing="false" text="Cancelar">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </Button>
+               </children>
+            </HBox>
+        </items>
+      </ToolBar>
+      <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+         <children>
+            <HBox alignment="BOTTOM_LEFT" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <VBox prefHeight="47.0" prefWidth="133.0" spacing="5.0">
+                     <children>
+                        <Label text="Data do Caixa" />
+                        <DatePicker fx:id="dpData" prefHeight="35.0" prefWidth="133.0" />
+                     </children>
+                  </VBox>
+                  <VBox prefWidth="100.0" spacing="5.0">
+                     <children>
+                        <Label text="Entrada inicial" />
+                        <TextField fx:id="tfEntrada" prefHeight="26.0" prefWidth="245.0">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding></TextField>
+                     </children>
+                  </VBox>
+                <Button fx:id="btChangeCaixa" mnemonicParsing="false" text="Fechar Caixa">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </Button>
+                  <Label fx:id="lbStateCaixa" text="Caixa Aberto">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Suprimentos" />
+                        <TextField fx:id="tfSuprimentos" disable="true" prefHeight="26.0" prefWidth="245.0">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </TextField>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Sangrias" />
+                        <TextField fx:id="tfSangrias" disable="true" prefHeight="26.0" prefWidth="245.0">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </TextField>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Saldo" />
+                        <TextField fx:id="tfSaldo" disable="true" prefHeight="26.0" prefWidth="245.0">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </TextField>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox disable="true" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Bomba" />
+                        <TextField fx:id="tfBomba" prefHeight="26.0" prefWidth="245.0">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </TextField>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Peças a vista" />
+                        <TextField fx:id="tfPecasVista" prefHeight="26.0" prefWidth="245.0">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </TextField>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Peças a prazo" />
+                        <TextField fx:id="tfPecasPrazo" prefHeight="26.0" prefWidth="245.0">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </TextField>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Recebimentos" />
+                        <TextField fx:id="tfRecebimentos" prefHeight="26.0" prefWidth="245.0">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </TextField>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+      <TableView fx:id="tblLancamentos" prefHeight="270.0" prefWidth="600.0">
+        <columns>
+          <TableColumn fx:id="colTipo" prefWidth="128.0" text="Tipo" />
+          <TableColumn fx:id="colDesc" prefWidth="336.0" text="Descrição" />
+            <TableColumn fx:id="colValor" prefWidth="123.0" text="Valor" />
+        </columns>
+      </TableView>
+   </children>
+</VBox>

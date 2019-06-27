@@ -1,11 +1,15 @@
 package br.com.jhdev.models.beans;
 
+import java.time.LocalDate;
+import java.sql.Date;
+
 /**
  * Movimento
  */
 public class Movimento {
 
 	private int id;
+	private LocalDate dataCaixa;
 	private String descricao;
 	private char tipo;
 	private double valor;
@@ -15,11 +19,15 @@ public class Movimento {
 	public Movimento() {
 	}
 
-	public Movimento(int id, String descricao, char tipo, double valor) {
-		this.id = id;
+	public Movimento(String descricao, char tipo, double valor) {
 		this.descricao = descricao;
 		this.tipo = tipo;
 		this.valor = valor;
+	}
+
+	public Movimento(int id, String descricao, char tipo, double valor) {
+		this(descricao, tipo, valor);
+		this.id = id;
 	}
 
 	public int getId() {
@@ -28,6 +36,23 @@ public class Movimento {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public LocalDate getDataCaixa() {
+		return this.dataCaixa;
+	}
+
+	
+	public void setDataCaixa(LocalDate dataCaixa) {
+		this.dataCaixa = dataCaixa;
+	}
+	
+	public Date getDateCaixa() {
+		return Date.valueOf(getDataCaixa());
+	}
+
+	public void setDateCaixa(Date dataCaixa) {
+		setDataCaixa(dataCaixa.toLocalDate());
 	}
 
 	public String getDescricao() {
@@ -44,6 +69,13 @@ public class Movimento {
 
 	public void setTipo(char tipo) {
 		this.tipo = tipo;
+	}
+
+	public String getTipe() {
+		if(this.tipo == 'E'){
+			return "Entrada";
+		}
+		return "Saida";
 	}
 
 	public double getValor() {

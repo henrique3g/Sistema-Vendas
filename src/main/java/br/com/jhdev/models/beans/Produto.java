@@ -32,14 +32,18 @@ public class Produto {
 		this.quantidade = quantidade;
 		this.valorTotal = valorTotal;
 	}
-
-	public Produto(int id, String nome, String descricao, String codigoBarras, String unidade, int estoqueMinimo, double precoVenda, double precoCompra, int quantidade, double valorTotal, Categoria categoria) {
-		this(id, nome, unidade, precoVenda, quantidade, valorTotal);
+	
+	public Produto(int id, String nome, String descricao, String codigoBarras, String unidade, int estoqueMinimo, double precoVenda, Categoria categoria){
+		this(id, nome, unidade, precoVenda);
 		this.descricao = descricao;
 		this.codigoBarras = codigoBarras;
 		this.estoqueMinimo = estoqueMinimo;
-		this.precoCompra = precoCompra;
 		this.categoria = categoria;
+	}
+
+	public Produto(int id, String nome, String descricao, String codigoBarras, String unidade, int estoqueMinimo, double precoVenda, double precoCompra, int quantidade, double valorTotal, Categoria categoria) {
+		this(id, nome, descricao, codigoBarras, unidade, estoqueMinimo, precoVenda, categoria);
+		this.precoCompra = precoCompra;
 	}
 
 	public int getId() {

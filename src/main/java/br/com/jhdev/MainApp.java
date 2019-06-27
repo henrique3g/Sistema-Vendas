@@ -1,5 +1,6 @@
 package br.com.jhdev;
 
+import br.com.jhdev.util.InfoSystem;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -21,7 +22,7 @@ public class MainApp extends Application {
         stage.centerOnScreen();
         stage.show();
     }
-
+    
     /**
      * The main() method is ignored in correctly deployed JavaFX application.
      * main() serves only as fallback in case the application can not be
@@ -31,6 +32,7 @@ public class MainApp extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        new InfoSystem();
         launch(args);
     }
 

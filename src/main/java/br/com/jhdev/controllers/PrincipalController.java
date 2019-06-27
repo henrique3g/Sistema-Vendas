@@ -25,6 +25,14 @@ public class PrincipalController implements Initializable {
 	private MenuItem menuClose;
 	@FXML
 	private MenuItem menuSobre;
+	@FXML
+	private MenuItem menuCategoria;
+	@FXML
+	private MenuItem menuProdutos;
+	@FXML
+	private MenuItem menuCaixa;
+	@FXML
+	private MenuItem menuVenda;
 	/* @FXML
 	private Button btnClientes;
 	@FXML
@@ -33,6 +41,12 @@ public class PrincipalController implements Initializable {
 	private JFXButton btnClientes;
 	@FXML
 	private JFXButton btnRegioes;
+	@FXML
+	private JFXButton btCat;
+	@FXML
+	private JFXButton btProdutos;
+	@FXML
+	private JFXButton btCaixa;
 	
 
 	@Override
@@ -42,6 +56,14 @@ public class PrincipalController implements Initializable {
 		menuCadRegiao.setOnAction(e -> new View("Regiões", ViewName.REGIOES));
 		
 		menuSobre.setOnAction(e -> new View("Sobre", ViewName.SOBRE));
+
+		menuCategoria.setOnAction(e -> new View("Categorias", ViewName.CATEGORIAS));
+
+		menuProdutos.setOnAction(e -> new View("Produtos", ViewName.PRODUTOS));
+
+		menuCaixa.setOnAction(e -> new View("Caixa", ViewName.CAIXA));
+
+		menuVenda.setOnAction(e -> new View("Venda", ViewName.VENDAS));
 
 		menuClose.setOnAction(e -> System.exit(0));
 		
@@ -53,6 +75,9 @@ public class PrincipalController implements Initializable {
 			}	
 		});
 		btnRegioes.setOnAction(e -> new View("Regiões", ViewName.REGIOES));
+		btCat.setOnAction(e -> new View("Categorias", ViewName.CATEGORIAS));
+		btProdutos.setOnAction(e -> new View("Produtos", ViewName.PRODUTOS));
+		btCaixa.setOnAction(e -> new View("Caixa", ViewName.CAIXA));
 	}
 
 	
